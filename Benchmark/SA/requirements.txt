@@ -1,0 +1,9 @@
+# Core numerical versions used for this adapter's verification; Python >= 3.11.
+# The original requirements.txt is preserved for the earlier benchmark.
+SearchLibrium==0.0.152
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.16.2
+jax==0.8.1
+jaxlib==0.8.1
+matplotlib==3.10.6

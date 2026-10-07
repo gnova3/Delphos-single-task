@@ -1,0 +1,63 @@
+# VNS benchmark parameters for Biogeme 3.3.1.
+# The experiment seed is supplied by VNS_SEED in vns_benchmark.py. Keeping the
+# Biogeme Monte Carlo seed at zero prevents candidate construction from
+# repeatedly resetting the global random state.
+
+[Biogeme]
+version = "3.3.1"
+
+[Specification]
+missing_data = 99999
+numerically_safe = "True"
+use_jit = "True"
+
+[MultiThreading]
+number_of_threads = 0
+
+[TrustRegion]
+dogleg = "True"
+
+[MonteCarlo]
+number_of_draws = 10000
+seed = 0
+
+[AssistedSpecification]
+# The largest specification has fewer than 60 free parameters. A tight ceiling
+# catches accidental expansion of the information set.
+maximum_number_parameters = 60
+number_of_neighbors = 20
+largest_neighborhood = 20
+# This is Biogeme's default and the budget used by the old benchmark. Change it
+# only as a pre-declared experiment, and apply an equivalent budget to every
+# competing method.
+maximum_attempts = 100
+
+[Output]
+identification_threshold = 1e-05
+only_robust_stats = "True"
+generate_html = "False"
+generate_yaml = "False"
+save_validation_results = "False"
+
+[SimpleBounds]
+second_derivatives = 1.0
+tolerance = 6.055454452393343e-07
+max_iterations = 2000
+infeasible_cg = "False"
+initial_radius = 1
+steptol = 3.666852862501036e-11
+enlarging_factor = 10
+
+[Bootstrap]
+number_of_jobs = 2
+
+[Estimation]
+bootstrap_samples = 100
+calculating_second_derivatives = "analytical"
+large_data_set = 100000
+max_number_parameters_to_report = 200
+save_iterations = "False"
+# This threshold only selects enumeration versus VNS. It is not the number of
+# candidate models estimated by VNS.
+maximum_number_catalog_expressions = 5000
+optimization_algorithm = "automatic"

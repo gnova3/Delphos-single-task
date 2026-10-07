@@ -1,0 +1,32 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Python cache and logs
+__pycache__/
+*.py[cod]
+*.log
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore outputs from Apollo estimation
+*.RData
+*.out
+
+# Ignore virtual environments
+env/
+venv/
+.env/
+
+# Ignore large CSVs and data files unless explicitly tracked
+*.csv
+!swissmetro.csv  # exception for preprocessed input
+
+# Ignore user metadata
+*.swp
+*.bak
+
+# Ignore specific folders and all their contents
+Submission/
+Experiments/
